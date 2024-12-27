@@ -1,0 +1,206 @@
+export type QuestionType = "select" | "radio";
+
+export interface QuestionTranslation {
+  text: string;
+  options: { value: string; label: string }[];
+}
+
+export interface Question {
+  id: string;
+  type: QuestionType;
+  translations: {
+    [key: string]: QuestionTranslation;
+  };
+}
+
+export const questions: Question[] = [
+  {
+    id: "gender",
+    type: "radio",
+    translations: {
+      english: {
+        text: "What is your gender?",
+        options: [
+          { value: "male", label: "Male" },
+          { value: "female", label: "Female" },
+          { value: "other", label: "Other" },
+        ],
+      },
+      hindi: {
+        text: "आपका लिंग क्या है?",
+        options: [
+          { value: "male", label: "पुरुष" },
+          { value: "female", label: "महिला" },
+          { value: "other", label: "अन्य" },
+        ],
+      },
+      kannada: {
+        text: "ನಿಮ್ಮ ಲಿಂಗ ಯಾವುದು?",
+        options: [
+          { value: "male", label: "ಪುರುಷ" },
+          { value: "female", label: "ಮಹಿಳೆ" },
+          { value: "other", label: "ಇತರೆ" },
+        ],
+      },
+    },
+  },
+  {
+    id: "age",
+    type: "select",
+    translations: {
+      english: {
+        text: "How old are you?",
+        options: [
+          { value: "18-25", label: "18-25 years" },
+          { value: "26-35", label: "26-35 years" },
+          { value: "36-45", label: "36-45 years" },
+          { value: "46-60", label: "46-60 years" },
+          { value: "60+", label: "60+ years" },
+        ],
+      },
+      hindi: {
+        text: "आपकी उम्र क्या है?",
+        options: [
+          { value: "18-25", label: "18-25 वर्ष" },
+          { value: "26-35", label: "26-35 वर्ष" },
+          { value: "36-45", label: "36-45 वर्ष" },
+          { value: "46-60", label: "46-60 वर्ष" },
+          { value: "60+", label: "60+ वर्ष" },
+        ],
+      },
+      kannada: {
+        text: "ನಿಮ್ಮ ವಯಸ್ಸು ಎಷ್ಟು?",
+        options: [
+          { value: "18-25", label: "18-25 ವರ್ಷ" },
+          { value: "26-35", label: "26-35 ವರ್ಷ" },
+          { value: "36-45", label: "36-45 ವರ್ಷ" },
+          { value: "46-60", label: "46-60 ವರ್ಷ" },
+          { value: "60+", label: "60+ ವರ್ಷ" },
+        ],
+      },
+    },
+  },
+  {
+    id: "area",
+    type: "radio",
+    translations: {
+      english: {
+        text: "Do you live in an urban or rural area?",
+        options: [
+          { value: "urban", label: "Urban" },
+          { value: "rural", label: "Rural" },
+        ],
+      },
+      hindi: {
+        text: "क्या आप शहरी या ग्रामीण क्षेत्र में रहते हैं?",
+        options: [
+          { value: "urban", label: "शहरी" },
+          { value: "rural", label: "ग्रामीण" },
+        ],
+      },
+      kannada: {
+        text: "ನೀವು ನಗರ ಅಥವಾ ಗ್ರಾಮೀಣ ಪ್ರದೇಶದಲ್ಲಿ ವಾಸಿಸುತ್ತೀರಾ?",
+        options: [
+          { value: "urban", label: "ನಗರ" },
+          { value: "rural", label: "ಗ್ರಾಮೀಣ" },
+        ],
+      },
+    },
+  },
+  {
+    id: "state",
+    type: "select",
+    translations: {
+      english: {
+        text: "Which state do you live in?",
+        options: [
+          { value: "andhra-pradesh", label: "Andhra Pradesh" },
+          { value: "karnataka", label: "Karnataka" },
+          { value: "maharashtra", label: "Maharashtra" },
+          { value: "tamil-nadu", label: "Tamil Nadu" },
+          { value: "kerala", label: "Kerala" }
+        ],
+      },
+      hindi: {
+        text: "आप किस राज्य में रहते हैं?",
+        options: [
+          { value: "andhra-pradesh", label: "आंध्र प्रदेश" },
+          { value: "karnataka", label: "कर्नाटक" },
+          { value: "maharashtra", label: "महाराष्ट्र" },
+          { value: "tamil-nadu", label: "तमिलनाडु" },
+          { value: "kerala", label: "केरल" }
+        ],
+      },
+      kannada: {
+        text: "ನೀವು ಯಾವ ರಾಜ್ಯದಲ್ಲಿ ವಾಸಿಸುತ್ತೀರಿ?",
+        options: [
+          { value: "andhra-pradesh", label: "ಆಂಧ್ರ ಪ್ರದೇಶ" },
+          { value: "karnataka", label: "ಕರ್ನಾಟಕ" },
+          { value: "maharashtra", label: "ಮಹಾರಾಷ್ಟ್ರ" },
+          { value: "tamil-nadu", label: "ತಮಿಳುನಾಡು" },
+          { value: "kerala", label: "ಕೇರಳ" }
+        ],
+      },
+    },
+  },
+  {
+    id: "social-category",
+    type: "radio",
+    translations: {
+      english: {
+        text: "What is your social category?",
+        options: [
+          { value: "general", label: "General" },
+          { value: "obc", label: "OBC" },
+          { value: "sc", label: "SC" },
+          { value: "st", label: "ST" },
+        ],
+      },
+      hindi: {
+        text: "आपकी सामाजिक श्रेणी क्या है?",
+        options: [
+          { value: "general", label: "सामान्य" },
+          { value: "obc", label: "ओबीसी" },
+          { value: "sc", label: "अनुसूचित जाति" },
+          { value: "st", label: "अनुसूचित जनजाति" },
+        ],
+      },
+      kannada: {
+        text: "ನಿಮ್ಮ ಸಾಮಾಜಿಕ ವರ್ಗ ಯಾವುದು?",
+        options: [
+          { value: "general", label: "ಸಾಮಾನ್ಯ" },
+          { value: "obc", label: "ಒಬಿಸಿ" },
+          { value: "sc", label: "ಪರಿಶಿಷ್ಟ ಜಾತಿ" },
+          { value: "st", label: "ಪರಿಶಿಷ್ಟ ಪಂಗಡ" },
+        ],
+      },
+    },
+  },
+  {
+    id: "disability",
+    type: "radio",
+    translations: {
+      english: {
+        text: "Are you a person with a disability?",
+        options: [
+          { value: "yes", label: "Yes" },
+          { value: "no", label: "No" },
+        ],
+      },
+      hindi: {
+        text: "क्या आप दिव्यांग व्यक्ति हैं?",
+        options: [
+          { value: "yes", label: "हाँ" },
+          { value: "no", label: "नहीं" },
+        ],
+      },
+      kannada: {
+        text: "ನೀವು ಅಂಗವಿಕಲತೆ ಹೊಂದಿರುವ ವ್ಯಕ್ತಿಯೇ?",
+        options: [
+          { value: "yes", label: "ಹೌದು" },
+          { value: "no", label: "ಇಲ್ಲ" },
+        ],
+      },
+    },
+  },
+];
